@@ -10,12 +10,12 @@ A [stable version] can be used from Docker Hub.
 
 ### Azure Event Hub example
 ```
-docker run -d -p 4000:4000 -e "service=eventhubs" -e "connectionString=Endpoint=sb://****.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=***************" -e "eventHubName=*****"  streamsight/console
+docker run -d -p 4000:4000 -e "service=eventhubs" -e "connectionString=Endpoint=sb://****.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=***************" -e "eventHubName=*****" streamsight/console
 ```
 
 ### Apache Kafka example
 ```
-docker run -d -p 4000:4000 -e "service=kafka" -e "connectionString=localhost:2181" -e "topic=MyTopic"  streamsight/console
+docker run -d -p 4000:4000 -e "service=kafka" -e "connectionString=localhost:2181" -e "topic=MyTopic" streamsight/console
 ```
 
 ### Running in Kubernetes
