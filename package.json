@@ -1,0 +1,20 @@
+{
+  "name": "streamsight",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "alasql": "^0.4.0",
+    "azure-event-hubs": "0.0.8",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "kafka-node": "^1.6.2"
+  }
+}

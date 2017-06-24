@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<!-- Meta Tags -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Streamsight</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Favicon -->
+
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+	<!-- Loading Google Fonts -->
+
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700' rel='stylesheet' type='text/css'>
+
+	<!-- Loading Third Party Styles -->
+
+	<link rel="stylesheet" href="/third-party/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/third-party/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/third-party/et-line/css/style.css">
+	<link rel="stylesheet" href="/third-party/elegant-icons/css/style.css">
+	<link rel="stylesheet" href="/third-party/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+	<link rel="stylesheet" href="/third-party/pe-icon-7-stroke/css/helper.css">
+	<link rel="stylesheet" href="/third-party/nivo-lightbox/css/nivo-lightbox.css" />
+	<link rel="stylesheet" href="/third-party/nivo-lightbox/themes/default/default.css" />
+	<link rel="stylesheet" href="/third-party/animate/css/animate.css">
+	<link rel="stylesheet" href="/third-party/ace/sqlserver.css">
+	<link rel="stylesheet" href="/third-party/jsonviewer/jsonviewer.css">
+
+	<!-- Loading Theme's Styles -->
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/custom.css">
+
+	<!-- Script for IE < 9 -->
+
+	<!--[if lt IE 9]>
+		<script src="third-party/respond/js/respond.min.js"></script>
+		<![endif]-->
+
+</head>
+
+<body class="dark-body">
+
+	<!-- Page Loader -->
+
+	<div class="loader">
+		<div class="spinner"></div>
+	</div>
+
+	<!-- Page Content -->
+
+	<div class="page-content">
+
+		<!-- Header - Fullscreen -->
+
+		<header class="navigation nav-fullscreen">
+
+			<!-- Header Wrapper -->
+
+			<div class="main-nav nav-icons-right header-icons header-right sticky full-width">
+				<div class="navbar navbar-default" role="navigation">
+					<div class="container active">
+						<div class="navbar-header">
+							<a href="#" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<ul class="bar-icon-wrapper">
+									<li class="bar-icon"></li>
+									<li class="bar-icon"></li>
+									<li class="bar-icon"></li>
+								</ul>
+							</a>
+							<!-- Logo -->
+
+							<a class="logo" href="index.html">
+								<h3>STREAMSIGHT</h3>
+							</a>
+						</div>
+						<div class="navbar-icons">
+							<ul class="nav navbar-nav navbar-right">
+
+								<li class="menu-icon">
+									<a class="full-screen-menu-trigger" href="#">
+										<ul class="bar-icon-wrapper">
+											<li class="bar-icon"></li>
+											<li class="bar-icon"></li>
+											<li class="bar-icon"></li>
+										</ul>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="full-screen-header">
+						<div class="nav-container">
+							<div class="nav-holder">
+								<div class="inner-content">
+									<ul class="full-screen-nav">
+
+										<!-- Header Links -->
+
+										<li><a href="index.html">Home</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="credits">
+							<span>Made with <i class="fa fa-heart"></i> by yaron2</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- End of Header -->
+		<br>
+		<div class="section-admin container-fluid">
+			<div class="row admin text-center">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-sm-3">
+							<div class="admin-content bg-purple text-light text-left">
+								<span class="counter-icon icon-layers"></span>
+								<span data-bind="text: events" class="counter"></span>
+								<h3>Events</h3>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="admin-content bg-dark-blue text-light text-left">
+								<span class="counter-icon icon-hourglass"></span>
+								<span data-bind="text: eventsPerSecond" class="counter"></span>
+								<h3>Events per Second</h3>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="admin-content bg-red text-light text-left">
+								<span class="counter-icon icon-hazardous"></span>
+								<span data-bind="text: errors" class="counter"></span>
+								<h3>Errors</h3>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div data-bind="if: metadata" class="admin-content bg-dark-green text-light text-left">
+								<span class="counter-icon icon-puzzle"></span>
+								<span data-bind="text: metadata().value" class="counter"></span>
+								<h3 data-bind="text: metadata().name"></h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="section-admin container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-lg-5">
+							<div style="width: auto; height: 300px;" id="editor"></div>
+							<br>
+							<span>
+								<a href="javascript:;" data-bind="click: query" class="btn btn-lg btn-success"><strong>Query</strong></a>	
+							</span>
+							<span data-bind="if: queryElapsed">
+								<h4 data-bind="text: 'Execution time: ' + queryElapsed() + 'ms'"></h4>
+							</span>
+							<span data-bind="if: error">
+								<h4 style="color: #eb4b4b" data-bind="text: error"></h4>
+							</span>
+						</div>
+						<div class="col-lg-7">
+							<div class="admin-content">
+								<ul class="nav tab-theme tab-border">
+									<li class="active">
+										<a href="#tabJson" data-toggle="tab" aria-expanded="true">JSON</a>
+									</li>
+									<li class="">
+										<a href="#tabTable" data-toggle="tab" aria-expanded="false">Table</a>
+									</li>
+								</ul>
+								<div>
+									<div class="tab-theme">
+										<div class="tab-content">
+											<div id="tabJson" class="tab-pane active">
+												<div data-bind="ifnot: results">
+													<h1>No Data</h1>
+												</div>
+												<div data-bind="if: results">
+													<pre id="json-renderer"></pre>
+												</div>
+											</div>
+											<div id="tabTable" class="tab-pane">
+												<div data-bind="ifnot: results">
+													<h1>No Data</h1>
+												</div>
+												<div data-bind="if: results">
+													<h3>Table Format (non-nested)</h3><br>
+													
+													<table class="table table-theme">
+														<thead class="bg-blue">
+															<tr data-bind="foreach: results().table.columns">
+																<th data-bind="text: $data"></th>
+															</tr>
+														</thead>
+														<tbody data-bind="foreach: results().json">
+															<tr data-bind="foreach: $parent.results().table.columns">
+																<td data-bind="text: $parent[$data]"></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Page Content -->
+
+	<!-- Loading Third Party Scripts -->
+
+	<script src="/third-party/jquery/jquery.min.js"></script>
+	<script src="/third-party/knockout/knockout.min.js"></script>
+	<script src="/third-party/ace/ace.js"></script>
+	<script src="/third-party/jsonviewer/jsonviewer.js"></script>
+	<script src="/third-party/easing/js/jquery.easings.min.js"></script>
+	<script src="/third-party/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/third-party/nivo-lightbox/js/nivo-lightbox.min.js"></script>
+	<script src="/third-party/owl/js/owl.carousel.js"></script>
+	<script src="/third-party/counter-up/js/jquery.counterup.min.js"></script>
+	<script src="/third-party/form-validation/js/formValidation.js"></script>
+	<script src="/third-party/form-validation/js/framework/bootstrap.min.js"></script>
+	<script src="/third-party/waypoint/js/waypoints.min.js"></script>
+	<script src="/third-party/wow/js/wow.min.js"></script>
+	<script src="/third-party/slimscroll/jquery.slimscroll.js"></script>
+	<script src="/third-party/flot/jquery.flot.min.js"></script>
+	<script src="/third-party/flot/jquery.flot.time.min.js"></script>
+	<script src="/third-party/flot/jquery.flot.resize.min.js"></script>
+
+
+	<!-- Loading Theme's Scripts -->
+
+	<script src="/js/scripts.js"></script>
+
+	<!-- Loading Page's Scripts -->
+	<script src="/js/viewmodels/app.viewmodel.js"></script>
+
+	<script>
+		$(function () {
+			$('.slim-scroll-div').slimscroll({
+				height: 'auto'
+			})
+		});
+
+		$(document).ready(function () {
+			ko.applyBindings(new AppViewModel());
+		});
+	</script>
+</body>
+
+</html>
