@@ -18,6 +18,22 @@ docker run -d -p 4000:4000 -e "service=eventhubs" -e "connectionString=Endpoint=
 docker run -d -p 4000:4000 -e "service=kafka" -e "connectionString=localhost:2181" -e "topic=MyTopic"  streamsight/console
 ```
 
+### Running in Kubernetes
+Streamsight can be easily deployed unto Kubernetes using the templates in the /kubernetes_templates folder.
+Edit and fill in the env variables in the corresponding deployment yaml.
+
+Event Hubs:
+
+```
+kubectl create -f kubernetes_templates/eventhubs
+```
+
+Kafka:
+
+```
+kubectl create -f kubernetes_templates/kafka
+```
+
 ## Web UI
 
 The Streamsight dashboard is available at localhost:4000 (or the host port of your choice)

@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: streamsight
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: streamsight
+    spec:
+      containers:
+      - name: console
+        image: streamsight/console
+        ports:
+        - containerPort: 4000
+        env:
+        - name: service
+          value: "kafka"
+        - name: connectionString
+          value: ""
+        - name: topic
+          value: ""
+        - name: groupId
+          value: "kafka-node-group"
