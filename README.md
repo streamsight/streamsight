@@ -6,7 +6,7 @@ Streamsight displays data in both JSON and Table formats and gives insights into
 
 ## Getting started
 The easiest way to use Streamsight is to simply build as a Docker image and then run with the environment variables of choice.
-A stable version can be used from Docker Hub.
+A [stable version] can be used from Docker Hub.
 
 ### Azure Event Hub example
 ```
@@ -39,4 +39,4 @@ Steamsight exposes the following endpoints:
 curl localhost:4000/query?q=select * from events
 ```
 
-
+[stable version]: https://hub.docker.com/r/streamsight/console/
