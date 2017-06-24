@@ -1,6 +1,6 @@
 # Streamsight
-Streamsight is an interactive query engine for telemetry ingestion and distributed streaming platforms.__
-Using Streamsight you can perform live ANSI-SQL queries on top of data from Azure Event Hubs, Apache Kafka and more.__
+Streamsight is an interactive query engine for telemetry ingestion and distributed streaming platforms. <br />
+Using Streamsight you can perform live ANSI-SQL queries on top of data from Azure Event Hubs, Apache Kafka and more. <br />
 Streamsight displays data in both JSON and Table formats and gives insights into different metrics of the streaming platform of choice.
 
 ## Getting started
