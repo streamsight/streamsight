@@ -19,7 +19,7 @@ docker run -d -p 4000:4000 -e "service=kafka" -e "connectionString=localhost:218
 ```
 
 ### Running in Kubernetes
-Streamsight can be easily deployed unto Kubernetes using the templates in the /kubernetes_templates folder.
+Streamsight can be easily deployed unto Kubernetes using the templates in the /kubernetes_templates folder. <br />
 Edit and fill in the env variables in the corresponding deployment yaml.
 
 Event Hubs:
