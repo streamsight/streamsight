@@ -30,13 +30,13 @@ Steamsight exposes the following endpoints:
 |---------------------------------------|---------------------------------------------------------------|
 |GET /query?q=                          | Query the streaming platform for data                         |
 |GET /stats                             | Returns Total Messages, Events / Second and Error Count       |
-|POST /metadata                         | Returns platform specific metadata                            |
+|GET /metadata                          | Returns platform specific metadata                            |
 |GET /status                            | Healthcheck for Streamsight                                   |
 
 ### Test it out
 
 ```
-curl localhost:4000/query?q=select * from events
+curl localhost:4000/status
 ```
 
 [stable version]: https://hub.docker.com/r/streamsight/console/
