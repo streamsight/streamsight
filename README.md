@@ -38,6 +38,8 @@ kubectl create -f kubernetes_templates/kafka
 
 The Streamsight dashboard is available at localhost:4000 (or the host port of your choice)
 
+![Alt text](/images/streamsight.png)
+
 ## RESTful API
 
 Steamsight exposes the following endpoints:
