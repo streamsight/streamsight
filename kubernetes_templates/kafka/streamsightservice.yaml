@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: streamsight-service-eventhubs
+  name: streamsight-service-kafka
 spec:
   selector:
-    app: streamsight-eventhubs
+    app: streamsight-kafka
   ports:
     - protocol: TCP
       port: 80
